@@ -1,14 +1,14 @@
 package com.example.jazs24967nbp.model;
 
-import io.swagger.v3.oas.annotations.media.Schema;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 import java.util.Date;
 
+@Entity
 public class NbpModel {
 
+    @Id
    private Integer id;
    private Material material;
    private Date date_from;

@@ -38,7 +38,11 @@ public class FirstController {
                     content = @Content) })
 
     @GetMapping("/gold")
-    public ResponseEntity<NbpModel> getExchangeRate(@RequestParam NbpModel.Material material, @RequestParam Date date_from, @RequestParam Date date_to) {
-        return ResponseEntity.ok(new NbpModel());
+    // ResponseEntity<NbpModel> getExchangeRate(@RequestParam NbpModel.Material material, @RequestParam String date_from, @RequestParam String date_to) {
+    public ResponseEntity<String> getExchangeRate(@RequestParam NbpModel.Material material, @RequestParam String date_from, @RequestParam String date_to) {
+        String result = nbpService.getPrices(material, date_from, date_to);
+
+        //return ResponseEntity.ok(new NbpModel());
+        return ResponseEntity.ok(result);
     }
 }
